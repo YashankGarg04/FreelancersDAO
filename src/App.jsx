@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import GradientBackground from './Components/GradientBackground';
 import Navbar from './Components/Navbar';
 import ActivateWithActivator from './Components/Heading';
@@ -10,6 +10,7 @@ const App = () => {
   const handleClick = () => {
     console.log('Button clicked!');
   };
+  
   const Home = () => {
     return (
       <>
@@ -18,17 +19,19 @@ const App = () => {
         <div className="absolute inset-0 flex justify-center items-center">
           <ActivateWithActivator />
         </div>
-        <div  className="absolute inset-0 flex justify-center items-center">
-      <Button onClick={handleClick}>Launch App</Button>
-    </div>
+        <div className="absolute inset-0 flex justify-center items-center">
+          <Button onClick={handleClick}>Launch App</Button>
+        </div>
       </>
     );
   };
+  
   return (
     <Router>
       <div className="relative w-full min-h-screen bg-zinc-900 text-white">
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Navigate to="/Home" />} /> {/* Redirect to /home by default */}
+          <Route path="/Home" element={<Home />} />
           <Route path="/apps" element={<Apps />} />
           <Route path="/AboutUs" element={<AboutPage />} />
         </Routes>
@@ -42,10 +45,10 @@ const Apps = () => {
     <>
       <Navbar />
       <GradientBackground />
-      
     </>
   );
 };
+
 const AboutPage = () => {
   return (
     <>
