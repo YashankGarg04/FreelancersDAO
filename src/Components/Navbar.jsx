@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import gifLogo from "./robotgif/aa_f.gif";
-import staticLogo from "./robotgif/aa.jpg";
+import gifLogo from "./robotgif/fdao.jpg";
+import staticLogo from "./robotgif/fdao.jpg";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navLinks = ["Home", "Apps", "About Us"];
+  const navLinks = ["Home", "About Us"];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -18,7 +18,7 @@ function Navbar() {
   const handleLogoHoverLeave = () => setIsLogoHovered(false);
 
   return (
-    <nav className="sticky bg-zinc-900/40 backdrop-blur-md top-0 z-[999] py-4 flex justify-between items-center">
+    <nav className="sticky bg-black backdrop-blur-md top-0 z-[999] py-4 flex justify-between items-center">
       {/* Logo */}
       <div
         className="flex items-center cursor-pointer"
@@ -30,7 +30,7 @@ function Navbar() {
           alt="Logo"
           className="w-14 h-14" // Set standard logo dimensions
         />
-        <span className="text-xl ml-2">Activator</span>
+       <span className="text-xl ml-2" style={{ color: '#D9811E' }}>Freelancers DAO</span>
       </div>
 
       {/* Navbar Links */}
